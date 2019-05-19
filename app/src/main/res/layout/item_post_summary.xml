@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+
+        <variable name="model" type="com.rahulverlekar.test.basecode.model.Post"/>
+
+        <variable name="callback" type="com.rahulverlekar.test.basecode.MainActivity"/>
+
+    </data>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:onClick="@{() -> callback.postClicked(model)}">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(model.id)}"
+                style="@style/TextAppearance.AppCompat.Display1"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{model.url}"
+                style="@style/TextAppearance.AppCompat.Display2"/>
+
+    </LinearLayout>
+</layout>
